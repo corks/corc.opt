@@ -1,20 +1,18 @@
 #include "opt.h"
 
 CorkOpt *
-corkopt_init(int argc, char *argv[])
+corkopt_init(void)
 {
     CorkOpt *co;
 
     if ((co = malloc(sizeof(CorkOpt))) == NULL)
         return NULL;
 
-    co->argc = argc;
-    co->argv = argv;
-
+    co->args = corklist_create();
     return co;
 }
 
-static void
+void
 corkopt_fini(CorkOpt *co)
 { }
 
