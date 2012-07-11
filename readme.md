@@ -57,7 +57,10 @@ main(int argc, char *argv[])
     // Now parse the arguments.
     corkopt_parse(co, argc, argv);
 
-    // By this time, all is done. Exit.
+    // By this time, all is done. Destroy the option parser.
+    corkopt_fini(co);
+
+    // Now return a successful execution to the operating system.
     return EXIT_SUCCESS;
 }
 `
