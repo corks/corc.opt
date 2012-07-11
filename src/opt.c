@@ -13,6 +13,12 @@ corkopt_init(void)
 }
 
 void
+corkopt_set_char(CorkOpt *co, const char *what)
+{
+    co->flag_char = what;
+}
+
+void
 corkopt_fini(CorkOpt *co)
 { }
 
