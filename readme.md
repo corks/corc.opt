@@ -1,28 +1,37 @@
-cork.opt
+ynys.opt
 ========
 
-This software library is open source but copyrighted; see the `license.txt`
-file for more information.
+This software library is copyrighted under the X11 license; see the
+`license.txt` file for more information.
 
-cork.opt is a component of the [libcork](http://github.com/corks/libcork)
+ynys.opt is a component of the [libynys](http://github.com/corks/libynys)
 project. You are free to use this component separately from the
-libcork distribution.
+libynys distribution.
 
 Introduction
 ============
 
-cork.opt is a cross-platform command-line option parser. It works on
+ynys.opt is a cross-platform command-line option parser. It works on
 Windows and Unices (including OS X). It has the goal of providing a simple,
 abstracted interface for option parsing.
 
-cork.opt operates based on rules. There are built-in rules which allow
-cork.opt to operate in the same manner as GNU's getopt(), or a similar
+ynys.opt operates based on rules. There are built-in rules which allow
+ynys.opt to operate in the same manner as GNU's getopt(), or a similar
 variation, or you can define your own arbitrary rule to use for parsing.
 
 This allows for software developers to have much more flexibility and
 control, but abstracted to the highest level while still being very
 powerful. It does not use a switch-case scope for results, but rather uses
 callbacks to make things easier to understand.
+
+There are bindings available for the following languages:
+
+* Python
+* Ruby
+* Perl
+* .NET (C#)
+* Java
+* PHP
 
 Example
 =======
