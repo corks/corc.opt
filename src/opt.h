@@ -5,10 +5,19 @@
 
 typedef struct CorkOpt
 {
-    // ../
+    CorkList *args;
 } CorkOpt;
 
-CorkOpt *corkopt_init(int argc, char *argv[]);
-void corkopt_fini(CorkOpt *co);
+extern CorkOpt *corkopt_init(void);
+extern void corkopt_fini(CorkOpt *co);
+extern void corkopt_help(CorkOpt *co);
+extern void corkopt_add(CorkOpt *co,
+                        const int shortopt,
+                        const char *longopt,
+                        const char *helptext,
+                        void (*cb)(CorkOpt *co, const char *optarg),
+                        const int flags);
+
+extern void corkopt_parse(CorkOpt *co, int argc, char *argv[]);
 
 #endif
