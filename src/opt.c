@@ -23,10 +23,28 @@ corkopt_fini(CorkOpt *co)
 { }
 
 void
+corkopt_help(CorkOpt *co)
+{
+    void *t;
+    CorkOptElement *coe;
+
+    CORKLIST_FOREACH(co->args, t)
+    {
+        coe = (CorkOptElement *)t;
+
+        printf("Usage:\n");
+        printf("%s or %s: %s\n", coe->short_opt,
+                                 coe->long_opt,
+                                 coe->help_text);
+    }
+}
+
+void
 corkopt_add(CorkOpt *co,
             int shortopt,
             const char *longopt,
             const char *helptext,
+            void (*cb)(CorkOpt *co, const char *optarg),
             const int flags)
 {
     CorkOptElement *coe;
