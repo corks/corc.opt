@@ -1,36 +1,36 @@
 #include "opt.h"
 
-CorkOpt *
-corkopt_init(void)
+CorcOpt *
+corcopt_init(void)
 {
-    CorkOpt *co;
+    CorcOpt *co;
 
-    if ((co = malloc(sizeof(CorkOpt))) == NULL)
+    if ((co = malloc(sizeof(CorcOpt))) == NULL)
         return NULL;
 
-    co->args = corklist_create();
+    co->args = corclist_create();
     return co;
 }
 
 void
-corkopt_set_char(CorkOpt *co, const char *what)
+corcopt_set_char(CorcOpt *co, const char *what)
 {
     co->flag_char = what;
 }
 
 void
-corkopt_fini(CorkOpt *co)
+corcopt_fini(CorcOpt *co)
 { }
 
 void
-corkopt_help(CorkOpt *co)
+corcopt_help(CorcOpt *co)
 {
     void *t;
-    CorkOptElement *coe;
+    CorcOptElement *coe;
 
-    CORKLIST_FOREACH(co->args, t)
+    CORCLIST_FOREACH(co->args, t)
     {
-        coe = (CorkOptElement *)t;
+        coe = (CorcOptElement *)t;
 
         printf("Usage:\n");
         printf("%s or %s: %s\n", coe->short_opt,
@@ -40,16 +40,16 @@ corkopt_help(CorkOpt *co)
 }
 
 void
-corkopt_add(CorkOpt *co,
+corcopt_add(CorcOpt *co,
             int shortopt,
             const char *longopt,
             const char *helptext,
-            void (*cb)(CorkOpt *co, const char *optarg),
+            void (*cb)(CorcOpt *co, const char *optarg),
             const int flags)
 {
-    CorkOptElement *coe;
+    CorcOptElement *coe;
 
-    if ((coe = malloc(sizeof(CorkOptElement))) == NULL)
+    if ((coe = malloc(sizeof(CorcOptElement))) == NULL)
         return;
 
     coe->short_opt = shortopt;
@@ -57,6 +57,6 @@ corkopt_add(CorkOpt *co,
     coe->help_text = helptext;
     coe->flags     = flags;
 
-    corklist_append(co->opts, coe);
+    corclist_append(co->opts, coe);
     return;
 }

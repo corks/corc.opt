@@ -1,23 +1,23 @@
-#ifndef CORK_OPT_OPT_H
-#define CORK_OPT_OPT_H
+#ifndef CORC_OPT_OPT_H
+#define CORC_OPT_OPT_H
 
-#include <libcork/ds.h>
+#include <libcorc/ds.h>
 
-typedef struct CorkOpt
+typedef struct CorcOpt
 {
-    CorkList *args;
-} CorkOpt;
+    CorcList *args;
+} CorcOpt;
 
-extern CorkOpt *corkopt_init(void);
-extern void corkopt_fini(CorkOpt *co);
-extern void corkopt_help(CorkOpt *co);
-extern void corkopt_add(CorkOpt *co,
+extern CorcOpt *corcopt_init(void);
+extern void corcopt_fini(CorcOpt *co);
+extern void corcopt_help(CorcOpt *co);
+extern void corcopt_add(CorcOpt *co,
                         const int shortopt,
                         const char *longopt,
                         const char *helptext,
-                        void (*cb)(CorkOpt *co, const char *optarg),
+                        void (*cb)(CorcOpt *co, const char *optarg),
                         const int flags);
 
-extern void corkopt_parse(CorkOpt *co, int argc, char *argv[]);
+extern void corcopt_parse(CorcOpt *co, int argc, char *argv[]);
 
 #endif
