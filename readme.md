@@ -27,7 +27,7 @@ callbacks to make things easier to understand.
 Example
 =======
 
-`
+````
 #include <libcork/opt.h>
 
 void
@@ -63,4 +63,4 @@ main(int argc, char *argv[])
     // Now return a successful execution to the operating system.
     return EXIT_SUCCESS;
 }
-`
+````
