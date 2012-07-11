@@ -74,3 +74,15 @@ main(int argc, char *argv[])
     return EXIT_SUCCESS;
 }
 ````
+
+Further examples can be see on the wiki.
+
+Changelog
+=========
+
+1.0: Initial release.
+
+Credits
+=======
+
+This software was written by the libynys development team and contributors.
