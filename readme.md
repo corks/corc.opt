@@ -32,6 +32,7 @@ There are bindings available for the following languages:
 * .NET (C#)
 * Java
 * PHP
+* Erlang
 
 Example
 =======
