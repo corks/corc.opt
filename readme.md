@@ -4,7 +4,7 @@ corc.opt
 This software library is copyrighted under the X11 license; see the
 `license.txt` file for more information.
 
-corc.opt is a component of the [libcorc](http://github.com/corcs/libcorc)
+corc.opt is a component of the [libcorc](http://github.com/corks/libcorc)
 project. You are free to use this component separately from the
 libcorc distribution.
 
@@ -16,8 +16,8 @@ Windows and Unices (including OS X). It has the goal of providing a simple,
 abstracted interface for option parsing.
 
 corc.opt operates based on rules. There are built-in rules which allow
-corc.opt to operate in the same manner as GNU's getopt(), or a similar
-variation, or you can define your own arbitrary rule to use for parsing.
+corc.opt to operate in the same manner as GNU's getopt(), or you can
+define your own arbitrary rule to use for parsing.
 
 This allows for software developers to have much more flexibility and
 control, but abstracted to the highest level while still being very
