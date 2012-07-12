@@ -13,12 +13,6 @@ corcopt_init(void)
 }
 
 void
-corcopt_set_char(CorcOpt *co, const char *what)
-{
-    co->flag_char = corcstr_new(what);
-}
-
-void
 corcopt_fini(CorcOpt *co)
 { }
 
@@ -32,10 +26,10 @@ corcopt_help(CorcOpt *co)
     {
         coe = (CorcOptElement *)t;
 
-        printf("Usage:\n");
-        printf("%s or %s: %s\n", coe->short_opt,
-                                 coe->long_opt,
-                                 coe->help_text);
+        printf("Usage: %s\n");
+        printf("%s or %s: %s\n", coe->short_opt->string,
+                                 coe->long_opt->string,
+                                 coe->help_text->string);
     }
 }
 
@@ -53,8 +47,8 @@ corcopt_add(CorcOpt *co,
         return false;
 
     coe->short_opt = short_opt;
-    coe->long_opt  = corcstr_new(long_opt);
-    coe->help_text = corcstr_new(help_text);
+    coe->long_opt  = corcstr(long_opt);
+    coe->help_text = corcstr(help_text);
     coe->flags     = flags;
 
     corclist_append(co->opts, coe);
