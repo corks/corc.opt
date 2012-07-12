@@ -15,7 +15,7 @@ corcopt_init(void)
 void
 corcopt_set_char(CorcOpt *co, const char *what)
 {
-    co->flag_char = what;
+    co->flag_char = corcstr_new(what);
 }
 
 void
@@ -39,24 +39,24 @@ corcopt_help(CorcOpt *co)
     }
 }
 
-void
+bool
 corcopt_add(CorcOpt *co,
-            int shortopt,
-            const char *longopt,
-            const char *helptext,
-            void (*cb)(CorcOpt *co, const char *optarg),
+            const int short_opt,
+            const char *long_opt,
+            const char *help_text,
+            void (*cb)(CorcOpt *co, CorcString *optarg),
             const int flags)
 {
     CorcOptElement *coe;
 
     if ((coe = malloc(sizeof(CorcOptElement))) == NULL)
-        return;
+        return false;
 
-    coe->short_opt = shortopt;
-    coe->long_opt  = longopt;
-    coe->help_text = helptext;
+    coe->short_opt = short_opt;
+    coe->long_opt  = corcstr_new(long_opt);
+    coe->help_text = corcstr_new(help_text);
     coe->flags     = flags;
 
     corclist_append(co->opts, coe);
-    return;
+    return true;
 }
