@@ -2,10 +2,8 @@
 
 static typedef struct CorcOptElement
 {
-    int short_opt;
-    CorkString *long_opt;
-    CorkString *help_opt;
-    int flags;
+    int short_opt, flags;
+    CorcString *long_opt, *help_text;
 } CorcOptElement;
 
 CorcOpt *
@@ -57,8 +55,22 @@ corcopt_add(CorcOpt *co,
     coe->short_opt = short_opt;
     coe->long_opt  = corcstr(long_opt);
     coe->help_text = corcstr(help_text);
+    coe->cb        = cb;
     coe->flags     = flags;
 
     corclist_append(co->opts, coe);
     return true;
+}
+
+void
+corcopt_parse(CorcOpt *co, int argc, char *argv[])
+{
+    CorcOptElement *coe;
+    CorcString *optarg;
+    void *t;
+
+    CORCLIST_FOREACH(co->args, t)
+    {
+        coe = (CorkOptElement *)t;
+    }
 }
