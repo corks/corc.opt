@@ -21,7 +21,7 @@ corcopt_init(void)
 void
 corcopt_fini(CorcOpt *co)
 {
-    CorkOptElement *coe;
+    CorcOptElement *coe;
     void *t;
 
     CORCLIST_FOREACH(co->args, t)
