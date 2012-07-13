@@ -1,8 +1,8 @@
 #ifndef CORC_OPT_OPT_H
 #define CORC_OPT_OPT_H
 
-#include <libcorc/ds.h>
-#include <libcorc/core.h>
+#include <libcorc/ds/list.h>
+#include <libcorc/core/str.h>
 
 typedef struct CorcOpt
 {
