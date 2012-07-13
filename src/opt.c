@@ -20,7 +20,19 @@ corcopt_init(void)
 
 void
 corcopt_fini(CorcOpt *co)
-{ }
+{
+    CorkOptElement *coe;
+    void *t;
+
+    CORCLIST_FOREACH(co->args, t)
+    {
+        coe = (CorcOptElement *)t;
+        free(coe);
+    }
+
+    corclist_fini(co->args);
+    free(co);
+}
 
 void
 corcopt_help(CorcOpt *co)
