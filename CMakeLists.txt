@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.7)
-project(corkopt C)
+project(corc.opt C)
 
 set(CMAKE_BUILD_TYPE Debug)
 
