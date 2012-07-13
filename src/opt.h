@@ -9,6 +9,14 @@ typedef struct CorcOpt
     CorcList *args;
 } CorcOpt;
 
+typedef struct CorkOptElement
+{
+    int short_opt;
+    CorkString *long_opt;
+    CorkString *help_opt;
+    int flags;
+} CorkOptElement;
+
 extern CorcOpt *corcopt_init(void);
 extern void corcopt_fini(CorcOpt *co);
 extern void corcopt_help(CorcOpt *co);
