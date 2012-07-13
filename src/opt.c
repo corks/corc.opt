@@ -1,5 +1,13 @@
 #include "opt.h"
 
+static typedef struct CorcOptElement
+{
+    int short_opt;
+    CorkString *long_opt;
+    CorkString *help_opt;
+    int flags;
+} CorcOptElement;
+
 CorcOpt *
 corcopt_init(void)
 {
