@@ -1,6 +1,7 @@
 #ifndef CORC_OPT_OPT_H
 #define CORC_OPT_OPT_H
 
+#include <stdio.h>
 #include <libcorc/ds/list.h>
 #include <libcorc/core/str.h>
 
