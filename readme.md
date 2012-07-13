@@ -85,4 +85,5 @@ Changelog
 Credits
 =======
 
-This software was written by the libcorc development team and contributors.
+This software was written and is maintained by the
+[libcorc development team.](https://github.com/corks/libcorc/blob/master/credits.md)
