@@ -17,7 +17,7 @@ extern CorcOpt *corcopt_init(void);
 extern void corcopt_fini(CorcOpt *co);
 extern void corcopt_help(CorcOpt *co);
 extern void corcopt_add(CorcOpt *co,
-                        const int short_opt,
+                        const char short_opt,
                         const char *long_opt,
                         const char *help_text,
                         void (*cb)(CorcOpt *co, CorcString *optarg),

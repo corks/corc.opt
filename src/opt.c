@@ -2,7 +2,8 @@
 
 static typedef struct CorcOptElement
 {
-    int short_opt, flags;
+    char short_opt;
+    int flags;
     CorcString *long_opt, *help_text;
 } CorcOptElement;
 
@@ -53,7 +54,7 @@ corcopt_help(CorcOpt *co)
 
 bool
 corcopt_add(CorcOpt *co,
-            const int short_opt,
+            const char short_opt,
             const char *long_opt,
             const char *help_text,
             void (*cb)(CorcOpt *co, CorcString *optarg),
