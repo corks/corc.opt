@@ -88,8 +88,8 @@ corcopt_help(CorcOpt *co)
 bool
 corcopt_add(CorcOpt *co,
             const char short_opt,
-            const char *long_opt,
-            const char *help_text,
+            const CorcString *long_opt,
+            const CorcString *help_text,
             void (*cb)(CorcOpt *co, CorcString *optarg),
             const int flags)
 {
@@ -99,8 +99,8 @@ corcopt_add(CorcOpt *co,
         return false;
 
     coe->short_opt = short_opt;
-    coe->long_opt  = corcstr(long_opt);
-    coe->help_text = corcstr(help_text);
+    coe->long_opt  = long_opt;
+    coe->help_text = help_text;
     coe->cb        = cb;
     coe->flags     = flags;
 

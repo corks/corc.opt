@@ -20,8 +20,8 @@ extern void corcopt_fini(CorcOpt *co);
 extern void corcopt_help(CorcOpt *co);
 extern void corcopt_add(CorcOpt *co,
                         const char short_opt,
-                        const char *long_opt,
-                        const char *help_text,
+                        const CorcString *long_opt,
+                        const CorcString *help_text,
                         void (*cb)(CorcOpt *co, CorcString *optarg),
                         const int flags);
 
