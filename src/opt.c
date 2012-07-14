@@ -122,4 +122,7 @@ corcopt_parse(CorcOpt *co, int argc, char *argv[])
     {
         coe = (CorkOptElement *)t;
     }
+
+    co->argc = 0;
+    co->argv = NULL;
 }
