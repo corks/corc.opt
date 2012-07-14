@@ -73,12 +73,13 @@ corcopt_help(CorcOpt *co)
     void *t;
     CorcOptElement *coe;
 
+    printf("Usage: %s [options]\n", co->argv[0]);
+
     CORCLIST_FOREACH(co->args, t)
     {
         coe = (CorcOptElement *)t;
 
-        printf("Usage: %s\n");
-        printf("%s or %s: %s\n", coe->short_opt->string,
+        printf("%s or %s: %s\n", coe->short_opt,
                                  coe->long_opt->string,
                                  coe->help_text->string);
     }
@@ -113,6 +114,9 @@ corcopt_parse(CorcOpt *co, int argc, char *argv[])
     CorcOptElement *coe;
     CorcString *optarg;
     void *t;
+
+    co->argc = argc;
+    co->argv = argv;
 
     CORCLIST_FOREACH(co->args, t)
     {

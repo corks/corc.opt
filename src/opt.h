@@ -11,6 +11,8 @@
 extern typedef struct CorcOpt
 {
     CorcList *args;
+    int argc;
+    char *argv[];
 } CorcOpt;
 
 extern CorcOpt *corcopt_init(void);
