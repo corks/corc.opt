@@ -116,7 +116,7 @@ corcopt_parse(CorcOpt *co, int argc, char *argv[])
 
     CORCLIST_FOREACH(co->args, t)
     {
-        coe = (CorkOptElement *)t;
+        coe = (CorcOptElement *)t;
     }
 
     co->argc = 0;
