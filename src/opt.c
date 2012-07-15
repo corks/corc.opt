@@ -75,9 +75,18 @@ corcopt_help(CorcOpt *co)
     {
         coe = (CorcOptElement *)t;
 
-        printf("%s or %s: %s\n", coe->short_opt,
-                                 coe->long_opt->string,
-                                 coe->help_text->string);
+        if (coe->flags & CORCOPT_REQUIRED_ARG)
+        {
+            printf("-%s <arg> or --%s <arg>: %s", coe->short_opt,
+                                                  coe->long_opt->string,
+                                                  coe->help_text->string);
+        }
+        else if (coe->flags & CORCOPT_OPTIONAL_ARG)
+        {
+            printf("-%s [<arg>] or --%s [<arg>]: %s", coe->short_opt,
+                                                      coe->long_opt->string,
+                                                      coe->help_text->string);
+        }
     }
 }
 
