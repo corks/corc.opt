@@ -54,14 +54,10 @@ corcopt_init(void)
 void
 corcopt_fini(CorcOpt *co)
 {
-    CorcOptElement *coe;
     void *t;
 
     CORCLIST_FOREACH(co->args, t)
-    {
-        coe = (CorcOptElement *)t;
-        free(coe);
-    }
+        free((CorcOptElement *) t);
 
     corclist_fini(co->args);
     free(co);
