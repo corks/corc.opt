@@ -87,6 +87,14 @@ corcopt_help(CorcOpt *co)
                                                       coe->long_opt->string,
                                                       coe->help_text->string);
         }
+        else if (coe->flags & CORCOPT_OPTIONAL)
+        {
+            printf("-%s or --%s: %s", coe->short_opt,
+                                      coe->long_opt->string,
+                                      coe->help_text->string);
+        }
+        else
+            continue;
     }
 }
 

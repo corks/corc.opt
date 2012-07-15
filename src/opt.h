@@ -5,8 +5,9 @@
 #include <libcorc/ds/list.h>
 #include <libcorc/core/str.h>
 
-#define CORCOPT_REQUIRED 0x00
-#define CORCOPT_OPTIONAL 0x01
+#define CORCOPT_REQUIRED_ARG 0x00
+#define CORCOPT_OPTIONAL     0x01
+#define CORCOPT_OPTIONAL_ARG 0x02
 
 extern typedef struct CorcOpt
 {
